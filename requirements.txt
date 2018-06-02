@@ -1,2 +1,6 @@
 Django==2.0.6
+djangorestframework==3.8.2
 psycopg2==2.7.4
+flake8==3.5.0
+Pillow==5.1.0
+django-nose==1.4.5
