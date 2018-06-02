@@ -1,14 +1,25 @@
 version: '3'
 
 services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+      - ./nginx:/etc/nginx/conf.d
+      - ./static:/static
+    depends_on:
+      - web
   db:
     image: postgres
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: gunicorn music_library.wsgi -b 0.0.0.0:8000
     volumes:
       - .:/code
-    ports:
-      - "8000:8000"
+      - ./static:/static
+    expose:
+      - "8000"
     depends_on:
       - db
