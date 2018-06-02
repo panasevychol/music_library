@@ -26,7 +26,9 @@ SECRET_KEY = 'sv$gaq$64$b@sf61b8ui&qjz+23sc(ul9fobtmic%9%+e&duiq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web']
+ALLOWED_HOSTS = [
+    'web'
+]
 
 
 # Application definition
@@ -40,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_nose'
+    'django_nose',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +140,5 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=foo,bar',
 ]
+
+ITEMS_PER_PAGE = 20

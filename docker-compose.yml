@@ -9,16 +9,18 @@ services:
       - .:/code
       - ./nginx:/etc/nginx/conf.d
       - ./static:/static
+      - ./uploads:/uploads
     depends_on:
       - web
   db:
     image: postgres
   web:
     build: .
-    command: gunicorn music_library.wsgi -b 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
       - ./static:/static
+      - ./uploads:/uploads
     expose:
       - "8000"
     depends_on:
