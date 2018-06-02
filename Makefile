@@ -1,5 +1,8 @@
+build:
+	docker-compose build
+
 run:
-	docker-compose up --build
+	docker-compose up
 
 manage:
 	docker-compose run web python manage.py $(CMD)
