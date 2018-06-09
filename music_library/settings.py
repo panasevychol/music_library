@@ -36,6 +36,8 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'music_library.apps.artists',
     'music_library.apps.releases',
+    'music_library.apps.tags',
+    'music_library.apps.tracks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
