@@ -1,0 +1,7 @@
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('browse/', views.BrowseReleasesView.as_view(), name='browse-releases'),
+]

@@ -4,9 +4,10 @@ from .models import Artist
 
 
 class ArtistSerializer(serializers.ModelSerializer):
+    picture = serializers.StringRelatedField()
 
     class Meta:
         model = Artist
         fields = (
-            'name', 'description', 'picture'
+            'name', 'slug', 'description', 'picture'
         )
