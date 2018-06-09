@@ -1,8 +1,12 @@
 var app = angular.module("app", []);
 
-app.controller("HelloController", function($scope, $http) {
+app.controller("MainController", function($scope, $http) {
   // Get artists
-  $http.get('/artists/browse/').then(function(response){
+  $http.get('/artists/browse/', {params: {page_size: 3}} ).then(function(response){
     $scope.artists = response.data.results;
+  });
+  // Get releases
+  $http.get('/releases/browse/', {params: {page_size: 3}} ).then(function(response){
+    $scope.releases = response.data.results;
   });
 });
