@@ -144,3 +144,5 @@ NOSE_ARGS = [
 ]
 
 ITEMS_PER_PAGE = 20
+
+POPULARITY_CHOICES = zip( range(0, 11), range(0, 11) )

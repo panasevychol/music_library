@@ -16,6 +16,9 @@ class Release(models.Model):
     released_at = models.DateField()
     cover = models.ImageField(upload_to=settings.UPLOADS_DIR)
     tags = models.ManyToManyField(Tag, related_name=NAME_PLURAL)
+    popularity = models.PositiveSmallIntegerField(
+        choices=settings.POPULARITY_CHOICES, default=0
+    )
 
     def __str__(self):
         return '"{}" by {}'.format(self.name, self.artist)

@@ -8,5 +8,5 @@ class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
         fields = (
-            'name', 'duration',
+            'name', 'duration', 'playlink'
         )

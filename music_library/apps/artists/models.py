@@ -12,6 +12,9 @@ class Artist(models.Model):
     description = models.TextField(blank=True)
     picture = models.ImageField(blank=True, upload_to=settings.UPLOADS_DIR)
     tags = models.ManyToManyField(Tag, related_name=NAME_PLURAL)
+    popularity = models.PositiveSmallIntegerField(
+        choices=settings.POPULARITY_CHOICES, default=0
+    )
 
     def __str__(self):
         return self.name
