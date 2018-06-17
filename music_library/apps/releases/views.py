@@ -17,6 +17,6 @@ class BrowseReleasesView(ListAPIView):
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ('name', )
     ordering_fields = (
-        'name',
+        'popularity',
     )
-    ordering = ('name',)
+    ordering = ('-popularity',)

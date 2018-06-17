@@ -16,7 +16,4 @@ class BrowseTracksView(ListAPIView):
     pagination_class = BrowsePagePagination
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ('name', )
-    ordering_fields = (
-        'name',
-    )
-    ordering = ('name',)
+    ordering = ('-id',)
