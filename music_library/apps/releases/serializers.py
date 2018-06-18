@@ -11,5 +11,5 @@ class ReleaseSerializer(serializers.ModelSerializer):
         model = Release
         fields = (
             'name', 'description', 'cover', 'released_at', 'artist', 'tracks',
-            'tags'
+            'tags', 'id'
         )

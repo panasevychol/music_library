@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+     <text>{{track.name}} <span class="text-muted">від {{track.artist_name}}</span></text>
+     <span>
+
+      <a ng-if="track.playlink" href="{{track.playlink}}" target="_blank" class="badge badge-danger badge-pill">Play</a>
+      <small class="text-muted">{{track.duration  | date:'mm.ss'}}</small>
+     </span>
+  </li>
+</ul>

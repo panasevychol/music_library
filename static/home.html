@@ -19,7 +19,7 @@
   </div>
   <div class="navbar navbar-dark bg-dark box-shadow">
     <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
+      <a href="#" class="navbar-brand d-flex align-items-center" ng-click="showHomefeed()">
         <strong>Music Library</strong>
       </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,8 +37,8 @@
 
         <div class="col"></div>
         <div class="col-8">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <h1 class="jumbotron-heading">Музична бібліотека</h1>
+          <p class="lead text-muted">Вітаємо на головній сторінці Вашої музичної бібліотеки. <br>Розпочніть знайомство з пошуку улюбленої музики.<br></p>
             <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
           </p>
@@ -55,16 +55,8 @@
     </div>
   </section>
 
-  <div ng-include="'feed.html'"></div>
+  <div ng-if="view == 'feed'" ng-include="'feed.html'"></div>
+  <div ng-if="view == 'artist'" ng-include="'artist_details.html'"></div>
+  <div ng-if="view == 'release'" ng-include="'release_details.html'"></div>
 
 </main>
-
-<!-- <footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-  </div>
-</footer> -->
